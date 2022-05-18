@@ -12,8 +12,10 @@
     <script>
         function button1Pressed() {
             doInsert();
-            doSelect()
         }
+        $().ready(function () {
+            doSelect()
+        });
 
         async function doInsert() {
             var userid = document.getElementById('tf1').value;
