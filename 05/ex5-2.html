@@ -14,7 +14,8 @@
             doInsert();
         }
         $().ready(function () {
-            doSelect()
+            x = 0;
+            setInterval(doSelect, 2)
         });
 
         async function doInsert() {
@@ -28,6 +29,7 @@
             document.getElementById('result').innerHTML = "tweetしました";
         }
         async function doSelect() {
+            x++;
             var sql = 'select * from Tweets order by time desc limit 20';
             var objects = await osql.connect(sql);
             console.log(objects);
